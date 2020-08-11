@@ -6,8 +6,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Name</a>
-                <a href="" class="dropdown-item">By Blend</a>
+                <a href="{% url 'products' %}?product=blend" class="dropdown-item">Single Malt</a>
+                <a href="{% url 'products' %}?product=blend" class="dropdown-item"> Blend</a>
                 <a href="" class="dropdown-item">By Age</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Whiskies</a>
             </div>
@@ -17,11 +17,11 @@
                 Regions
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="region-link">
-                <a href="" class="dropdown-item">Campbelltown</a>
-                <a href="" class="dropdown-item">Highland</a>
-                <a href="" class="dropdown-item">Islay</a>
-                <a href="" class="dropdown-item">Speyside</a>
-                <a href="" class="dropdown-item">Islands</a>
+                <a href="{% url 'products' %}?category=campbelltown"  class="dropdown-item">Campbelltown</a>
+                <a href="{% url 'products' %}?category=higland" class="dropdown-item">Highland</a>
+                <a href="{% url 'products' %}?category=islay" class="dropdown-item">Islay</a>
+                <a href="{% url 'products' %}?category=speyside" class="dropdown-item">Speyside</a>
+                <a href="{% url 'products' %}?category=islands" class="dropdown-item">Islands</a>
             </div>
         </li> 
          <li class="nav-item dropdown">
