@@ -11,10 +11,27 @@ class Category(models.Model):
         return self.region
 
 
+class PreRelease(models.Model):
+    """ Models to view pre-release whisky"""
+    pre_release = models.CharField(
+        max_length=254, default=False, null=True, blank=True
+        )
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        return self.pre_release
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
 class Product(models.Model):
 
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL
+    )
+    pre_release = models.ForeignKey(
+        'PreRelease', null=True, blank=True, on_delete=models.SET_NULL
     )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
