@@ -51,7 +51,11 @@
                 <p class="lead mb-0 text-left font-weight-bold">
                   £{{ product.price }}
                 </p>
-                <p>{{ product.blend }}</p>
+                {% if product.single_malt %}
+                 <p>Single Malt</p>
+                {% else %}
+                <p>Blended</p>
+                {% endif %}
                 <p>{{ product.age}} years</p>
                 {% if product.is_exclusive %}
                 <p><i class="fas fa-wine-bottle mr-1"> Exclusive to us</i></p>
