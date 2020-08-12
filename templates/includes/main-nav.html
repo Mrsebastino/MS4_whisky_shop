@@ -26,12 +26,12 @@
         </li> 
          <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="special-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Specials Offers
+               Something Special
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Pre-Release</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">Exclusivity</a>
+                <a href="{% url 'products' %}?special=pre_release" class="dropdown-item">Pre-Release</a>
+                <a href="{% url 'products' %}?special=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?special=is_exclusive" class="dropdown-item">Exclusivity</a>
             </div>
         </li>  
    </ul>
