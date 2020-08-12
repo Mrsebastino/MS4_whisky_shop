@@ -36,7 +36,7 @@ class Product(models.Model):
     )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
-    single_malt = models.BooleanField(default=True)
+    single_malt = models.BooleanField(default=False)
     age = models.PositiveSmallIntegerField(blank=True, default=0)
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)

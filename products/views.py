@@ -11,8 +11,23 @@ def all_products(request):
     query = None
     categories = None
     specials = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
         if 'special' in request.GET:
             specials = request.GET['special'].split(',')
             products = products.filter(special__name__in=specials)
@@ -27,7 +42,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Please enter a  a search criteria!")
+                messages.error(request, "Please enter a search criteria!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
@@ -35,11 +50,14 @@ def all_products(request):
 
             products = products.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_specials': specials,
+        'current_sorting': current_sorting
     }
 
     return render(request, 'products/products.html', context)
