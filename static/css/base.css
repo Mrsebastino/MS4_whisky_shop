@@ -16,6 +16,11 @@ body {
     text-shadow : 2px 2px 8px #eba715;
 }
 
+.promo-link:hover {
+      text-shadow : 2px 2px 8px #eba715;
+      font-size: 25px;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -49,7 +54,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #eba715;
     color: white;
 }
 
