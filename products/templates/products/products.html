@@ -31,8 +31,8 @@
                 <option value="age_desc" {% if current_sorting == 'age_desc' %}selected{% endif %}>Age (old to young)</option>
                 <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
                 <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                <option value="whisky_name_asc" {% if current_sorting == 'whisky_name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                <option value="whisky_name_desc" {% if current_sorting == 'whisky_name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
             </select>
          </div>
         </div>
@@ -41,7 +41,7 @@
                 {% if search_term or current_categories or current_sorting or current_specials != 'None_None' %}
                  <span class="small"><a href="{% url 'products' %}">Uisge Beatha</a> | </span>
                 {% endif %}
-                {{ products|length }} Whisky(ies){% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                {{ products|length }} Whiskies{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
         </div>                
     </div> 
@@ -54,7 +54,7 @@
             <img
               class="card-img-top img-fluid"
               src="{{ product.image.url }}"
-              alt="{{ product.whisky_name }}"
+              alt="{{ product.name }}"
             />
           </a>
           {% else %}
@@ -62,12 +62,12 @@
             <img
               class="card-img-top img-fluid"
               src="{{ MEDIA_URL }}noimage.png"
-              alt="{{ product.whisky_name }}"
+              alt="{{ product.name }}"
             />
           </a>
           {% endif %}
           <div class="card-body pb-0">
-            <p class="mb-0">{{ product.whisky_name }} - {{ product.age}} years</p>
+            <p class="mb-0">{{ product.name }} - {{ product.age}} years</p>
           </div>
           {% if product.category %}
            <p class="small pl-3 mb-1 mt-1">
@@ -131,5 +131,41 @@
          </div>
        </div>
     </div>
-</div>
+  </div>
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+      <a class="btt-link d-flex h-100">
+        <i class="fa fa-arrow-up text-black mx-auto my-auto" 
+        aria-hidden="true"></i>
+      </a>
+    </div>
+{% endblock %}
+{% block postloadjs %}
+   {{ block.super }}
+   <script type="text/javascript">
+     $('.btt-link').click(function(e){
+        window.scrollTo(0,0)
+     })
+   </script>
+    <script type="text/javascript">
+        $('#sort-selector').change(function(){
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
+
+            let selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort" );
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl)
+            }
+        })
+    </script>
 {% endblock %}
