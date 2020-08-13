@@ -35,7 +35,7 @@ class Product(models.Model):
         'Special', null=True, blank=True, on_delete=models.SET_NULL
     )
     sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
+    whisky_name = models.CharField(max_length=254)
     single_malt = models.BooleanField(default=False)
     age = models.PositiveSmallIntegerField(blank=True, default=0)
     description = models.TextField()

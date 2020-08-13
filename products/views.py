@@ -21,7 +21,6 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -45,7 +44,7 @@ def all_products(request):
                 messages.error(request, "Please enter a search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(
+            queries = Q(whisky_name__icontains=query) | Q(
                 description__icontains=query) | Q(age__icontains=query)
 
             products = products.filter(queries)

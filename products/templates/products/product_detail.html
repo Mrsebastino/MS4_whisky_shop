@@ -20,7 +20,7 @@
             <img
               class="card-img-top img-fluid"
               src="{{ product.image.url }}"
-              alt="{{ product.name }}"
+              alt="{{ product.whisky_name }}"
             />
           </a>
           {% else %}
@@ -28,7 +28,7 @@
             <img
               class="card-img-top img-fluid"
               src="{{ MEDIA_URL }}noimage.png"
-              alt="{{ product.name }}"
+              alt="{{ product.whisky_name }}"
             />
           </a>
           {% endif %}
@@ -36,7 +36,7 @@
     </div>
     <div class="col-12 col-md-6 col-lg-3 offset-lg-2">
        <div class="product-details-container mb-5 mt-md-5">
-          <p class="mb-0">{{ product.name }} - {{ product.age}} years</p>
+          <p class="mb-0">{{ product.whisky_name }} - {{ product.age}} years</p>
             {% if product.category %}
            <p class="small mt-1 mb-0 mt-1">
            <a class="text-muted text-black" href="{% url 'products' %}?category={{ category.product.name}}">

@@ -15,12 +15,36 @@
   <div class="row">
     <div class="col text-center mt-5">
       <h2 class="logo-font">Whisky</h2>
-      <hr class="w-50 mb-1" />
+      <hr class="w-50 mb-1"/>
     </div>
   </div>
   <div class="row">
   <div class="product-container col-10 offset-1">
-    <div class="row mt-1 mb-2"></div>
+    <div class="row mt-1 mb-2">
+       <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+        <div class="sort-select-wrapper w-50">
+            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                 <option value="age_asc" {% if current_sorting == 'age_asc' %}selected{% endif %}>Age (young to old)</option>
+                <option value="age_desc" {% if current_sorting == 'age_desc' %}selected{% endif %}>Age (old to young)</option>
+                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                <option value="whisky_name_asc" {% if current_sorting == 'whisky_name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="whisky_name_desc" {% if current_sorting == 'whisky_name_desc' %}selected{% endif %}>Name (Z-A)</option>
+            </select>
+         </div>
+        </div>
+        <div class="col-12 col-md-6 order-md-first">
+            <p class="text-muted mt-3 text-center text-md-left">
+                {% if search_term or current_categories or current_sorting or current_specials != 'None_None' %}
+                 <span class="small"><a href="{% url 'products' %}">Uisge Beatha</a> | </span>
+                {% endif %}
+                {{ products|length }} Whisky(ies){% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>                
+    </div> 
     <div class="row">
     {% for product in products %}
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -30,7 +54,7 @@
             <img
               class="card-img-top img-fluid"
               src="{{ product.image.url }}"
-              alt="{{ product.name }}"
+              alt="{{ product.whisky_name }}"
             />
           </a>
           {% else %}
@@ -38,12 +62,12 @@
             <img
               class="card-img-top img-fluid"
               src="{{ MEDIA_URL }}noimage.png"
-              alt="{{ product.name }}"
+              alt="{{ product.whisky_name }}"
             />
           </a>
           {% endif %}
           <div class="card-body pb-0">
-            <p class="mb-0">{{ product.name }} - {{ product.age}} years</p>
+            <p class="mb-0">{{ product.whisky_name }} - {{ product.age}} years</p>
           </div>
           {% if product.category %}
            <p class="small pl-3 mb-1 mt-1">

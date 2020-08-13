@@ -5,6 +5,7 @@
                 All Whiskies
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?sort=whisky_name&direction=asc" class="dropdown-item">By Name</a>
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=single_malt&direction=desc" class="dropdown-item">Single Malt</a>
                 <a href="{% url 'products' %}?sort=single_malt&direction=asc" class="dropdown-item">Blend</a>
