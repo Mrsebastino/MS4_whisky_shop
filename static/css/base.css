@@ -41,6 +41,7 @@ body {
     background: whitesmoke;
     color: black;
     min-width: 260px;
+    box-shadow: 0 9px #999;
 }
 
 .btn-black {
@@ -52,23 +53,33 @@ body {
     background: white;
     color: black !important;
     border: 1px solid black;
+    box-shadow: 0 9px #999;
 }
 
 .btn-outline-black:hover,
-.btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: #eba715;;
     color: white !important;
+}
+.btn-outline-black:active{
+    background: #eba715;
+    box-shadow: 0 5px rgb(36, 35, 35);
+    transform: translateY(4px);
 }
 
 .enter-cellar-button:hover,
-.enter-cellar-button:active,
 .enter-cellar-button:focus,
 .btn-black:hover,
-.btn-black:active,
 .btn-black:focus {
     background: #eba715;
     color: white;
+}
+
+.enter-cellar-button:active,
+.btn-black:active {
+    background: #eba715;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .text-black {
