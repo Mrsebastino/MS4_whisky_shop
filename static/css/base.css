@@ -70,11 +70,11 @@ body {
 
 .btn-outline-black:hover,
 .btn-outline-black:focus {
-    background: #eba715;;
+    background: #626663;
     color: white !important;
 }
 .btn-outline-black:active{
-    background: #eba715;
+    background: #626663;
     box-shadow: 0 5px rgb(36, 35, 35);
     transform: translateY(4px);
 }
@@ -83,13 +83,13 @@ body {
 .enter-cellar-button:focus,
 .btn-black:hover,
 .btn-black:focus {
-    background: #eba715;
+    background: #626663;
     color: white;
 }
 
 .enter-cellar-button:active,
 .btn-black:active {
-    background: #eba715;
+    background: #626663;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -112,7 +112,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background:  #f5d58E;;
+    background: #e2cda4;
     z-index: -1;
 }
 

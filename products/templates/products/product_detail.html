@@ -36,7 +36,7 @@
     </div>
     <div class="col-12 col-md-6 col-lg-3 offset-lg-2">
        <div class="product-details-container mb-5 mt-md-5">
-          <p class="mb-0">{{ product.name }} - {{ product.age}} years</p>
+          <p class="mb-0">{{ product.name }} - {{ product.age}} years old.</p>
             {% if product.category %}
            <p class="small mt-1 mb-0 mt-1">
            <a class="text-muted text-black" href="{% url 'products' %}?category={{ category.product.name}}">
@@ -54,7 +54,7 @@
             <p></p>
             {% endif %} 
                 {% if product.pre_release %}
-                <p><i class="fas fa-wine-bottle mr-1">Available for pre order</i></p>
+                <p><i class="fas fa-wine-bottle mr-1">This whisky will be release in {{ product.pre_release }} years</i></p>
                 {% else %}
                 <p></p>
                 {% endif %} 
