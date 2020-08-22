@@ -14,7 +14,21 @@ body {
 
 #homepage-text{
     margin-top: 8rem;
-    text-shadow : 2px 2px 8px #eba715;
+    text-shadow: 
+        0 0.2em 50px rgba(0,0,0,1),
+        0.05em -0.03em 0 rgba(0,0,0,1),
+        0.05em 0.005em 0 rgba(0,0,0,1),
+        0 0.08em 0 rgba(0,0,0,1),
+        0.05em 0.08em 0 rgba(0,0,0,1),
+        0 -0.03em 0 rgba(0,0,0,1),
+        -0.03em -0.03em 0 rgba(0,0,0,1),
+        -0.03em 0.08em 0 rgba(0,0,0,1),
+        -0.03em 0 0 rgba(0,0,0,1);
+}
+
+.home-text {    
+    transform: scale(1.0);
+    display: inline-block;
 }
 
 #promo-banner{
@@ -45,8 +59,19 @@ body {
     text-transform: uppercase;
 }
 
-.main-logo-link {
+.logo-main-link {
+    font-size: 3em;
     width: fit-content;
+    text-shadow: 
+        0 0.2em 50px rgba(0,0,0,1),
+        0.05em -0.03em 0 rgba(0,0,0,1),
+        0.05em 0.005em 0 rgba(0,0,0,1),
+        0 0.08em 0 rgba(0,0,0,1),
+        0.05em 0.08em 0 rgba(0,0,0,1),
+        0 -0.03em 0 rgba(0,0,0,1),
+        -0.03em -0.03em 0 rgba(0,0,0,1),
+        -0.03em 0.08em 0 rgba(0,0,0,1),
+        -0.03em 0 0 rgba(0,0,0,1);
 }
 
 .enter-cellar-button {
