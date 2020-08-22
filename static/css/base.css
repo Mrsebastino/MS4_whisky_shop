@@ -1,12 +1,13 @@
 html{
     height: 100%;
+
 }
 
 body {
     background: url('/media/whisky.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    background-color: #f0f0f5;
+    background-color: #f5d58E;
     color:#000;
     font-family: 'Montserrat, sans-serif';
 }
@@ -16,9 +17,20 @@ body {
     text-shadow : 2px 2px 8px #eba715;
 }
 
+#promo-banner{
+   width: 450px;
+   height: 3rem;
+   background-color: #626663;
+}
+
 .promo-link:hover {
-      text-shadow : 2px 2px 8px #eba715;
+      text-shadow : 2px 2px 10px #f5700a;
       font-size: 25px;
+}
+
+#main-nav {
+    background-color: #626663;
+    height: 2rem;
 }
 
 .icon {
@@ -100,7 +112,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background:  #f5d58E;;
     z-index: -1;
 }
 
@@ -118,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-/*---------Bootstarp toast */
+/*---------Bootstrap toast */
 
 .message-container {
     position: fixed;

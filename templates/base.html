@@ -37,7 +37,7 @@
   <body>
   <!--Navbar and link from Bootstrap inspired from Chris Z Boutique Ado-->
     <header class="container-fluid fixed-top">
-       <div id="topnav" class="row bg-warning pt-lg-2 d-none d-lg-flex">
+       <div id="topnav" class="row bg-none pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-main-link text-black my-0">
@@ -98,8 +98,8 @@
           </ul>
         </div>
        </div>
-       <div class="row bg-light">
-         <nav class="navbar navbar-expand-lg navbar-light w-100">
+       <div class="row">
+         <nav class="navbar navbar-expand-lg mx-auto">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -107,9 +107,9 @@
             {% include 'includes/main-nav.html' %}
          </nav>
          </div>
-            <div id="promo-banner text-center" class="row text-center bg-none">
+            <div id="promo-banner" class="row text-center bg-none mx-auto">
                 <div class="col">
-                    <a href="{% url 'products' %}?special=pre_release" class="nav-link logo-font text-black">
+                    <a href="{% url 'products' %}?special=pre_release" class="nav-link logo-font text-white">
                      <h5 class="logo-font my-1 promo-link">Check our pre-release!</h5>
                     </a>
                 </div>
