@@ -26,6 +26,7 @@
     "Psycopg",
     "Speyside",
     "Wireframes",
-    "crossorigin"
+    "crossorigin",
+    "getenv"
 ]
 }
