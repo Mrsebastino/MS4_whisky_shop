@@ -12,7 +12,8 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
         'rating',
         'is_exclusive',
-        'pre_release',
+        'is_pre_release',
+        'release_date',
         'age',
         'image'
     )

@@ -53,8 +53,8 @@
             {% else %}
             <p></p>
             {% endif %} 
-                {% if product.pre_release %}
-                <p><i class="fas fa-wine-bottle mr-1">This whisky will be release in {{ product.pre_release }} years</i></p>
+                {% if product.is_pre_release %}
+                <p><i class="fas fa-wine-bottle mr-1">This whisky will be release in {{ product.release_date }} years</i></p>
                 {% else %}
                 <p></p>
                 {% endif %} 
