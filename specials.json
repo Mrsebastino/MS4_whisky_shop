@@ -1,0 +1,1 @@
+[{"model": "products.special", "pk": 1, "fields": {"name": "pre_release", "friendly_name": "Pre-Release"}}, {"model": "products.special", "pk": 2, "fields": {"name": "clearance", "friendly_name": "Clearance"}}, {"model": "products.special", "pk": 3, "fields": {"name": "is_exclusive", "friendly_name": "Exclusivity"}}]
