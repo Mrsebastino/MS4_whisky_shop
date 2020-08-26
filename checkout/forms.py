@@ -6,7 +6,6 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
-                  'expected_delivery_date',
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
                   )
@@ -26,7 +25,6 @@ class OrderForm(forms.ModelForm):
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'expected_delivery_date': 'Date to be release',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
