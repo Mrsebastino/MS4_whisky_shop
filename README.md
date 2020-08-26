@@ -42,3 +42,6 @@ All drawing for the website can be found  here
 * [Heroku](https://heroku.com/)
 * [AWS S3 Bucket](https://aws.amazon.com/)
 * [Boto3](https://boto3.amazonaws.com/)
+### Bugs encountered
+While making change to my `checkout Models` on migration got corrupted. I had a look and my mentor had a look, and the problem was with `Django`.
+So i proceed to create a new DB. My Mentor explained that after looking for a bug for nearly 40 minutes, at that stage it would be quicker to just create a new DB.

@@ -5,7 +5,6 @@ from django.db.models import Sum
 from django.conf import settings
 
 from products.models import Product
-import datetime
 
 
 class Order(models.Model):

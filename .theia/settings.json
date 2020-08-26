@@ -27,6 +27,7 @@
     "Speyside",
     "Wireframes",
     "crossorigin",
-    "getenv"
+    "getenv",
+    "lineitems"
 ]
 }
