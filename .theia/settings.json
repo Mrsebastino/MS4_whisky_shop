@@ -27,6 +27,7 @@
     "Speyside",
     "Wireframes",
     "allauth",
+    "countryfield",
     "crossorigin",
     "getenv",
     "lineitems"
