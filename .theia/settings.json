@@ -26,6 +26,7 @@
     "Psycopg",
     "Speyside",
     "Wireframes",
+    "allauth",
     "crossorigin",
     "getenv",
     "lineitems"
