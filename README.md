@@ -43,5 +43,5 @@ All drawing for the website can be found  here
 * [AWS S3 Bucket](https://aws.amazon.com/)
 * [Boto3](https://boto3.amazonaws.com/)
 ### Bugs encountered
-While making change to my `checkout Models` on migration got corrupted. I had a look and my mentor had a look, and the problem was with `Django`.
-So i proceed to create a new DB. My Mentor explained that after looking for a bug for nearly 40 minutes, at that stage it would be quicker to just create a new DB.
+While making change to my `checkout Models` one migration got corrupted. I had a look and my mentor had a look, and the problem was with `Django`. My Mentor suggested to just create a new DB it would be quicker than keep looking for the bug.
+
