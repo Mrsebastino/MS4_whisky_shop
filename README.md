@@ -45,3 +45,7 @@ All drawing for the website can be found  here
 ### Bugs encountered
 While making change to my `checkout Models` one migration got corrupted. I had a look and my mentor had a look, and the problem was with `Django`. My Mentor suggested to just create a new DB it would be quicker than keep looking for the bug.
 
+When migrating files to `postgres` and error showed up.
+`django.db.utils.ProgrammingError: cannot cast type integer to date
+LINE 1: ...R COLUMN "release_date" TYPE date USING "release_date"::date`
+I first rename the field, migrate to `sqlite3`, and then migrate to `postgres` again, still an error. I checked with tutor support and the problems was with some of the existing migration, deleting them fixed the bug.
