@@ -1,0 +1,1 @@
+web: gunicorn whisky_shop.wsgi:application
