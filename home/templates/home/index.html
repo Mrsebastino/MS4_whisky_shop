@@ -26,12 +26,13 @@
 
 {% block page_footer %}
      <footer>
-		<div class="container page-footer">
+		<div class="col-12 container-fluid page-footer d-none">
 			<div class="row">
-				<div class="col s12 l6">
-					<a class="logo-footer brand-logo" href="{% url 'home' %}"><span>Home Cooking</span></a>
+				<div class="col-6 mt-4">
+					<a class="logo-main-link logo-footer text-decoration-none" 
+                    href="{% url 'home' %}"><span>Uisge Beatha</span></a>
 				</div>
-				<div class="col l6 offset-6 s12">
+				<div class="col-6 mt-4">
 					<ul class="list-inline social-link">
 						<li class="list-inline-item">
 							<a href="https://www.facebook.com" aria-label="Facebook"
