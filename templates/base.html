@@ -98,8 +98,8 @@
           </ul>
         </div>
        </div>
-       <div class="row">
-         <nav class="navbar navbar-expand-lg mx-auto">
+       <div class="row" id="mobile-view">
+         <nav class="navbar navbar-expand-lg navbar-light mx-auto">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -109,7 +109,8 @@
          </div>
             <div id="promo-banner" class="row text-center bg-none mx-auto">
                 <div class="col">
-                    <a href="{% url 'products' %}?special=pre_release" class="nav-link main-font text-white">
+                    <a href="{% url 'products' %}?special=pre_release" 
+                    class="main-font text-white text-decoration-none">
                      <h5 class="main-font my-1 promo-link">Check our pre-release!</h5>
                     </a>
                 </div>
