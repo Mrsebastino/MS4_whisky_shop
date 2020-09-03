@@ -11,7 +11,12 @@ Grand Total: £{{ order.grand_total }}
 
 Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
-If you took advantage of our Pre Release service, another email will be send to you when the product is dispatched in {{ product.release_date }} years from now.
+{% for item in order.lineitems.all %}
+ {% if item.product.release_date %}
+Thank you for using  our Pre Release service, another email will be send to you when your {{ item.product.name }} is dispatch in 
+{{ item.product.release_date }} years from now.
+{% endif %}
+{% endfor %}
 
 We've got your phone number on file as {{ order.phone_number }}.
 
