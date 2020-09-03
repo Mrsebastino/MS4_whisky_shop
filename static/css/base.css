@@ -29,8 +29,8 @@ body {
 }
 
 #promo-banner{
-   width: 450px;
-   height: 3rem;
+   width: 300px;
+   height: 2rem;
    background-color: #626663;
 }
 
@@ -143,7 +143,7 @@ body {
     height: 42px;
     width: 42px;
     position: fixed;
-    bottom: 10px;
+    bottom: 30px;
     right: 10px;
 }
 
@@ -399,7 +399,6 @@ a.logo-footer {
 
     .nav-link i.fa-lg {
         font-size: 1rem;
-        padding: 0 3rem 0 3rem;
     }
     
     #mobile-view {
@@ -426,15 +425,6 @@ a.logo-footer {
         font-size: .9rem;
     }
      
-    #promo-banner {
-        width: auto;
-        margin-top: 0;
-    }
-
-
-   /* #promo-banner {
-        display: none;
-    }*/
 
     .btn.btn-outline-black.rounded-0 {
         padding: .375rem .375rem;
@@ -449,5 +439,12 @@ a.logo-footer {
 
     .increment-qty, .decrement-qty{
         padding: .25rem .5rem !important;
+    }
+}
+
+/* Navbar for medium screen */
+@media (min-width: 450px) {
+        .nav-link {
+        padding: 1.5rem;     
     }
 }
