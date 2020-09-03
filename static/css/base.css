@@ -10,6 +10,7 @@ body {
     background-color: #f5d58E;
     color:#000;
     font-family: 'Montserrat, sans-serif';
+    margin-bottom: 100px;
 }
 
 #homepage-text{
@@ -308,13 +309,13 @@ input[name='q']::placeholder {
 .page-footer {
   display: flex;
   margin-top: 15px;
-  margin-bottom: 0;
   background-color: #f5af2e;
   width: 100%;
-  max-width: none;
   flex-direction: column;
   text-align: center;
+  height: 100px;
 }
+
 
 a.logo-footer {
   color: whitesmoke;
@@ -398,6 +399,7 @@ a.logo-footer {
 
     .nav-link i.fa-lg {
         font-size: 1rem;
+        padding: 0 3rem 0 3rem;
     }
     
     #mobile-view {
@@ -408,14 +410,17 @@ a.logo-footer {
     #main-nav .nav-item {
         padding-left: 1rem;
         background-color: #626663;
+        z-index: 1;
+
     }
+
 
     .navbar-toggler {
         padding: .6rem .6rem;
         margin-right: 1rem;
         font-size: 1rem;
     }
-/*
+
     #promo-banner h5 {
         padding-top: .5rem;
         font-size: .9rem;
@@ -423,11 +428,13 @@ a.logo-footer {
      
     #promo-banner {
         width: auto;
+        margin-top: 0;
     }
-*/
-    #promo-banner {
+
+
+   /* #promo-banner {
         display: none;
-    }
+    }*/
 
     .btn.btn-outline-black.rounded-0 {
         padding: .375rem .375rem;
