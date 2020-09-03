@@ -10,7 +10,6 @@ body {
     background-color: #f5d58E;
     color:#000;
     font-family: 'Montserrat, sans-serif';
-    margin-bottom: 100px;
 }
 
 #homepage-text{
@@ -29,14 +28,15 @@ body {
 }
 
 #promo-banner{
-   width: 380px;
+   width: 300px;
    height: 2rem;
    background-color: #626663;
 }
 
 .promo-link:hover {
-      text-shadow : 2px 2px 10px #f5700a;
-      font-size: 25px;
+      color: #f5af2e;
+      text-shadow : 2px 2px 30px #f65d04;
+      font-size: 20px;
 }
 
 #main-nav {
@@ -308,12 +308,11 @@ input[name='q']::placeholder {
 /*---Footer from previous project---*/
 .page-footer {
   display: flex;
-  margin-top: 15px;
   background-color: #f5af2e;
   width: 100%;
   flex-direction: column;
   text-align: center;
-  height: 100px;
+  height: 80px;
 }
 
 
@@ -384,11 +383,12 @@ a.logo-footer {
         padding-top: 116px;
     }
 
+
     body {
         height: calc(100vh - 116px);
     }
 
-    .display-4.main-font.text-white {
+    .display-4.text-white {
         font-size: 2rem;
     }
 
@@ -423,6 +423,7 @@ a.logo-footer {
     #promo-banner h5 {
         padding-top: .5rem;
         font-size: .9rem;
+        
     }
      
 
