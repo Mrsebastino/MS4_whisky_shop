@@ -7,7 +7,7 @@ body {
     background: url('/media/whisky.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    background-color: #f5d58E;
+    background-color: #f5d58e;
     color:#000;
     font-family: 'Montserrat, sans-serif';
 }
@@ -70,6 +70,8 @@ body {
         -0.03em 0.08em 0 rgba(0,0,0,1),
         -0.03em 0 0 rgba(0,0,0,1);
 }
+
+/*----Buttons---*/
 
 .enter-cellar-button {
     background: whitesmoke;
@@ -262,7 +264,7 @@ input[name='q']::placeholder {
     border-radius: 0;
     box-shadow: 0 9px #999;
 
-    /* standard bootstrap btn transitions */
+ /*---standard bootstrap btn transitions---*/
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -388,7 +390,7 @@ a.logo-footer {
         height: calc(100vh - 116px);
     }
 
-    .display-4.text-white {
+    .display-4 {
         font-size: 2rem;
     }
 
@@ -401,16 +403,17 @@ a.logo-footer {
         font-size: 1rem;
     }
     
+
     #mobile-view {
         background-color: whitesmoke;
         margin-bottom: .4rem;
     }
+
     
     #main-nav .nav-item {
         padding-left: 1rem;
-        background-color: #626663;
         z-index: 1;
-
+        background-color:  #626663;
     }
 
 
