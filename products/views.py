@@ -9,7 +9,6 @@ from .forms import ProductForm
 
 def all_products(request):
     """ View to return all products and sorting and search queries """
-
     products = Product.objects.all()
     query = None
     categories = None
@@ -48,7 +47,10 @@ def all_products(request):
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
-                description__icontains=query) | Q(age__icontains=query)
+                description__icontains=query) | Q(
+                    age__icontains=query) | Q(
+                        single_malt__icontains=query
+            )
 
             products = products.filter(queries)
 
@@ -59,7 +61,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_specials': specials,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)

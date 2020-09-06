@@ -1,13 +1,29 @@
 # Uisge Beatha
-### Fourth Milestone Project
+The live website can be view here 
+[Uisge Beatha](https://git.heroku.com/whisky-shop-uisge-beatha.git)
 
-### Demo
----
-[Uisge Beatha](https://)
 
-### UX
----
+## UX
+### User
+ * As a user i want to be able to access the site on any device.
 
+ * As a user, I expect to easily navigate the website, so that I can quickly find what I'm looking for.
+ * As a user, I want to view products details (e.g. image, price, description, rating, provenance), so that I can book/buy some of them. 
+ * As a user, I want to search and filter the products easily, so that I can quickly find a specific product I am looking for.
+ * As a user, I want to view and modify my order in the shopping bag before completing it, so that I can make last changes easily before proceeding to payment.
+ * As a user, I want to view a total price of my purchases and delivery cost, so that I will understand and see how much I will be charged.
+ * As a user, I expect to make payments by card in a safe and secure way, so that I won't be concerned about the safety of my card details and won't be charged incorrectly.
+ * As a user, I want to receive an email confirmation after checkout, so that I can make sure that payment was successfull.
+ * As a user, I want to create my own account, so that I can save, view and edit my profile details and view my order history.
+ * As a user, I want to easily login anytime, so that I can get access to my saved profile.
+ * As a user, I want to reset my password if I forgot it.
+ * As a user, I want to be able to change my password, to keep my profile secure.
+
+ ### Owner
+ * As a user, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.
+
+
+ 
 ### UI
 ---
 

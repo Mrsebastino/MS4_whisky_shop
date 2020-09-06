@@ -32,7 +32,10 @@ body {
    height: 2rem;
    background-color: #626663;
 }
-
+.container-fluid,
+.fixed-top {
+    background-color: #f5af2e;
+}
 .promo-link:hover {
       color: #f5af2e;
       text-shadow : 2px 2px 30px #f65d04;
@@ -43,7 +46,6 @@ body {
     background-color: #626663;
     height: 2rem;
 }
-
 
 .icon {
     align-items: center;

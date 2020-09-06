@@ -33,7 +33,7 @@ class StripeWH_Handler:
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
+            [cust_email, settings.EMAIL_HOST_USER]
         )
 
     def handle_event(self, event):
@@ -145,7 +145,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order, product)
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | SUCCESS:'
                      'Created order in webhook'), status=200)
