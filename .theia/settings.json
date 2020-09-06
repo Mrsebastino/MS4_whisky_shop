@@ -23,6 +23,8 @@
     "Campbelltown",
     "Gunicorn",
     "Islay",
+    "Kilkerran",
+    "Lagavulin",
     "Psycopg",
     "Speyside",
     "Wireframes",
@@ -30,6 +32,7 @@
     "countryfield",
     "crossorigin",
     "getenv",
+    "hlpbbr",
     "lineitems"
 ]
 }
