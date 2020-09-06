@@ -32,10 +32,7 @@ body {
    height: 2rem;
    background-color: #626663;
 }
-.container-fluid,
-.fixed-top {
-    background-color: #f5af2e;
-}
+
 .promo-link:hover {
       color: #f5af2e;
       text-shadow : 2px 2px 30px #f65d04;
@@ -45,6 +42,12 @@ body {
 #main-nav {
     background-color: #626663;
     height: 2rem;
+}
+
+
+.product-page{
+    background-color:#f5d58e;
+    z-index: 1;
 }
 
 .icon {
@@ -138,7 +141,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: #e2cda4;
+    background: #f5d58e;
     z-index: -1;
 }
 

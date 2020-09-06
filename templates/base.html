@@ -36,6 +36,7 @@
   </head>
   <body>
   <!--Navbar and link from Bootstrap inspired from Chris Z Boutique Ado-->
+     {% block page_navbar %}
     <header class="container-fluid fixed-top">
        <div id="topnav" class="row bg-none pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -116,7 +117,8 @@
                 </div>
             </div>
     </header>
-
+    {% endblock %}
+    
     {% if messages %}
     <div class="message-container">
        {% for message in messages %}
