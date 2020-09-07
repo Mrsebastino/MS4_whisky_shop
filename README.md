@@ -138,13 +138,15 @@ STRIPE_WH_SECRET = os.getenv(your secret key)
 For more info on how to set up the Stripe keys visit [Stripe key](https://stripe.com/docs/keys).
 
 3. Install all requirements from the `requirements.txt` file putting this command into your terminal:
+```
 pip3 install -r requirements.txt
+```
 4. In the terminal in your IDE migrate the models to crete a database using the following commands:
 ```
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
-5. Load the data fixture (Categories, Specials, Products) in that order using the following comand in the terminal
+5. Load the data fixture (Categories, Specials, Products) in that order using the following command in the terminal
 ```
 python3 manage.py loaddata <fixture name>
 ```
@@ -158,3 +160,57 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 8. To access the admin panel add `/admin` in the url and enter the details for the superuser you created.
+
+#### Heroku Deployment
+In order for Heroku to work properly, the local deployment steps are required.
+You will also need to have installed  `gunicorn`, `dj-database-url` and `psycopg`. All of those are already in the project requirements.txt, but for future project they are essentials for Heroku to function properly. 
+
+1. Create a `requirements.txt ` file, which will contains the list of dependencies, using the following command in the terminal:
+```
+pip3 freeze > requirements.txt
+```
+2. Create a `Procfile` and inside it type:
+```
+web: gunicorn whisky_shop.wsgi:application
+```
+3. On [Heroku](https://heroku.com/) website you can now create your **new app**, assign a unique name(try to use a name as close as possible to the project name for consistency), choose the region the closest to you and click **Create app**.
+4. Go to **Resources** tab in Heroku, then in the **Add-ons** search bar look for **Heroku Postgres**, select **Hobby Dev — Free** and click **Provision*** button to add it to your project. (This is where  `dj-database-url` and `Psycopg` are required.)
+5. In the Heroku **settings** click on `Reveal Config Vars` and set the following variables.
+
+| KEY                       | VALUE              
+|-----------------          | ------------------ 
+| AWS_ACCESS_KEY_ID         | your AWS accees key here      
+| AWS_SECRET_ACCESS_KEY     | your AWS secret key here  
+| DATABASE_URL              | your Postgres DB url here
+| EMAIL_HOST_PASSWORD       | you email password(genereted by gmail)
+| EMAIL_HOST_USER           | your email address
+| SECRET_KEY                | your secret key
+| STRIPE_PUBLIC_KEY         | your stripe public key here
+| STRIPE_SECRET_KEY         | your stripe secretvkey here
+| STRIPE_WH_SECRET          | your stripe WH secret here
+| USE_AWS                   | True
+
+6. Copy **DATABASE_URL's value**(Postrgres database URL) from the Convig Vars and temporary paste it into the default database in `settings.py`.
+You can temporary comment out the current database settings code and just paste the following in `settings.py`:
+```
+DATABASES = {     
+        'default': dj_database_url.parse("<your Postrgres database URL here>")  
+    }
+```
+This is just a temporary set up that allows to make all the migrations required for our data in our DB to be transfer to Heroku **POstgres**. You shouln't commit and push at this stage for security reason.
+
+7. Here you can now follow the exact steps, 4, 5 and 6 as explain in local deployment.
+
+8. You can remove the POstgres URL form you settings and uncomment the default DATABASE code form your settings.
+
+9. Add your heroku app url to **ALLOWED_HOST** in the settings file and also include local host.
+```
+ALLOWED_HOSTS = ['your heroku app name here', 'localhost']
+```
+10. You can now connect Heroku to Github to automatically deploy each time you push to Github.
+In Heroku **Dashboards** select 
+* Deploy -> Deployment method -> Github
+* link youn Github repo name to Heroku
+* Click **Enable automatic Deployment**
+* Now you you run `git push` in the terminalit will push to Github and Heroku.
+11. After your app has been successfully deployed you can view you project by clicking on **open app**
