@@ -319,7 +319,7 @@ input[name='q']::placeholder {
   width: 100%;
   flex-direction: column;
   text-align: center;
-  height: 80px;
+  height: auto;
 }
 
 
@@ -327,6 +327,7 @@ a.logo-footer {
   color: whitesmoke;
   font-weight: 500;
   font-size: 30px;
+  padding-bottom: 25px;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -433,8 +434,8 @@ a.logo-footer {
         font-size: .9rem;
         
     }
-     
 
+    
     .btn.btn-outline-black.rounded-0 {
         padding: .375rem .375rem;
 
