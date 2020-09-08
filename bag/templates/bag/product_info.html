@@ -2,5 +2,5 @@
 <p class="my-0"><strong>Pre-Release: </strong>
 {% if item.product.is_pre_release %}
 This Whisky will be release in {{ item.product.release_date}} years 
-{% else %}N/A{% endif %}</p>
+{% endif %}</p>
 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>

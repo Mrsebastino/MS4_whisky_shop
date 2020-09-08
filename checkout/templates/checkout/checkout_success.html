@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block extra_title %} Whisky Shop{% endblock %}
+
+{% block page_navbar %}
+   {% include 'includes/navbar.html' %}
+{% endblock%}
+
 {% block page_header%}
 <div class="container header-container mb-5">
   <div class="row">
@@ -176,8 +182,8 @@
           </div>
         </div>
      </div>
-     <div class="row mb-2">
-        <div class="col-12 col-lg-7 text-right">
+     <div class="row mb-5">
+        <div class="col-12 col-lg-7 text-right mb-5">
         {% if from_profile %}
            <a href="{% url 'profile' %}" class="btn btn-outline-black rounded-0 my-2">
             <span class="icon mr-2">

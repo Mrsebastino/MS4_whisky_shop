@@ -1,6 +1,10 @@
 {% extends "base.html" %} 
 {% load static %}
 {% load bag_tools %}
+{% block extra_title %} Whisky Shop{% endblock %}
+{% block page_navbar %}
+   {% include 'includes/navbar.html' %}
+{% endblock%}
 
 {% block page_header%}
 <div class="container header-container">
@@ -19,8 +23,8 @@
        <hr>
        </div>
      </div>
-     <div class="row">
-       <div class="col">
+     <div class="row mb-5">
+       <div class="col mb-5">
          {% if bag_items %}
           <div class="d-block d-md-none">
              <div class="row">
@@ -113,8 +117,33 @@
        </div>
      </div>
   </div>
-
 {% endblock %}
+
+{% block page_footer %}
+     <footer class="page-footer fixed-bottom mt-auto">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-6 mt-2">
+					<a class="logo-main-link logo-footer text-decoration-none" 
+                    href="{% url 'home' %}"><span>Uisge Beatha</span></a>
+				</div>
+				<div class="col-6 mt-2">
+					<ul class="list-inline social-link">
+						<li class="list-inline-item">
+							<a href="https://www.facebook.com" aria-label="Facebook"
+								target="_blank"><i class="fab fa-facebook" rel="noopener"></i></a>
+							<a href="https://www.instagram.com" aria-label="Instagram"
+								target="_blank"><i class="fab fa-instagram" rel="noopener"></i></a>
+							<a href="https://www.twitter.com" aria-label="Twitter"
+								target="_blank"><i class="fab fa-twitter" rel="noopener"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+ {% endblock %}
+
 
 {% block postloadjs %}
 {{ block.super }}

@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block page_header%}
+{% extends "base.html" %} {% load static %} 
+{% block extra_title %} Whisky Shop{% endblock %}
+{% block page_header%}
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
@@ -9,7 +11,7 @@
   <div class="row">
     <div class="col-7 offset-7 col-md-6">
       <h1 id="homepage-text" class="display-4 text-white">
-        Take a look at our extensive collection
+        Take a look at our extensive collection.
       </h1>
       <div class="my-5">
         <h4>
@@ -25,13 +27,12 @@
 {% endblock %}
 
 {% block page_footer %}
-     <footer>
-		<div class="container-fluid page-footer fixed-bottom mt-5">
+     <footer class="page-footer fixed-bottom mt-auto py-3">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-6 mt-2">
 					<a class="logo-main-link logo-footer text-decoration-none" 
                     href="{% url 'home' %}"><span>Uisge Beatha</span></a>
-                    <p class="text-muted small">Educational use</p>
 				</div>
 				<div class="col-6 mt-2">
 					<ul class="list-inline social-link">
