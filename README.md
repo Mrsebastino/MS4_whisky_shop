@@ -1,17 +1,16 @@
 # Uisge Beatha
 Whisky is a big business in Scotland, it attract tourism and export all over the world. Almost everybody that visit Scotland leaves with a bottle of Whisky. 
-And there is no signs of slowing down, with meals being prepared with Whisky matching instead of wine, being jusrt one example.
-Whisky can be expensive, specially then older one, and it take times to make Whisky. Some distillery offer a pre-release service, where you can buy Whisky now, while it is still ageing in cask, making it more affordable for the consumers and brining income quicker to the distelliry.
+And there is no signs of slowing down, with meals being prepared with Whisky matching instead of wine, being one example.
+Whisky can be expensive, specially then older one, and it take times to make Whisky. Some distillery offer a pre-release service, where you can buy Whisky now, while it is still ageing in cask, making it more affordable for the consumers and brining income quicker to the distillery.
 
-The webpaggoals is to:
+The web page goals is to:
 * Sell and Promote Whisky
 * Make it quick and easy for customer to buy from the shop
 * To offer Whisky that are only available here
 * To offer Whisky that are still ageing with a pre-release service
 
 The live website can be view here 
-[Uisge Beatha](https://git.heroku.com/whisky-shop-uisge-beatha.git)
-
+[Uisge Beatha](https://whisky-shop-uisge-beatha.herokuapp.com/)
 
 ## UX
 ### All Users
@@ -35,7 +34,7 @@ The live website can be view here
  * As a user, I want to be able to change my password, to keep my profile secure.
 
  ### Owner
- * As a user, I want to have convenient and secure admin interface avalable only for website admin, so that I can add, edit and remove products/services.
+ * As a user, I want to have convenient and secure admin interface available only for website admin, so that I can add, edit and remove products/services.
 * As a owner, I want to received a copy of the confirmation email send to the user.
 
 ### Wireframes
@@ -52,14 +51,14 @@ All drawing for the website can be found  here
 * Enter our cellar button.
 * Footer with logo return to home page on the left and social media links on the right.
 #### All Whiskies
-* A sort bar is located on the right to allow users to search by **price**, **age**, **rating** or **name**. On moblile it located in the center.
+* A sort bar is located on the right to allow users to search by **price**, **age**, **rating** or **name**. On mobile it located in the center.
 * The whiskies are displayed in random order, by clicking on an image we are taking to the product detail page, where we can increase or decrease the quantity, add to our bag or go back to the cellar. 
 * Add to bag will trigger a confirmation in the top right corner with a link to the checkout.
 * Authorized users can edit or delete products on the all products page or product detail page.
-* A back to the top arrow is located on the botton right.
+* A back to the top arrow is located on the button right.
 #### Shopping Bag
 * The shopping bag page give the users a last chance to edit their bag.
-* It offers the choice to increase or completly remove a product fromm the bag.
+* It offers the choice to increase or completely remove a product fromm the bag.
 * It offers the chance to bo back to the cellar or to proceeded to the checkout.
 #### Checkout 
 * The checkout page ask the users to add theirs personal details, delivery details and card details.
@@ -96,17 +95,39 @@ All drawing for the website can be found  here
 * [Heroku](https://heroku.com/)
 * [AWS S3 Bucket](https://aws.amazon.com/)
 * [Boto3](https://boto3.amazonaws.com/)
-### Databses
+### Databases
 * [Sqlite3](https://www.sqlite.org/index.html) Used with Django
 * [PostgreSQL](https://www.postgresql.org/) Used with Heroku
 ### Testing
+* While i was developing the project i was manually testing as i go and checking on Google Chrome Developer Tools after each changes.
+* I tested the app on Chrome and Firefox on Laptop and 32inch HD Tv Screen, on the large screen we need to reduce the view to 75%.
+* I tested the app on Galaxy S9, S8, A40.On Ipad 6 in all cases the app was responsive and display content as expected.
+
+| Test         |  action  |   Result            |  Test Result
+|   -------    |  -----   |  ---------          |   ---------                 
+| click on     | click    | Take to you the all | passed
+|  cellar      |          |      Whisky page    |     
+| -----------  |--------- |-------------------- |------------
+| click on     |  click   |  open dropdown menu | passed
+| my account   |          |  link to Register   |
+|              |          |  log in             |
+| ---------    | ------   | ----------------    | ----------
+### Code Validation
+* All HTML passed the validation using W3C Markup Validation
+* All CSS files passed the validation using W3C CSS validation service. Jigsaw
+* All Python code passed the validation PEP8 online checker.
+#### Defensive design
+* Warning messages are used when user enter wrong password, email. If the email is already taken and if the passwords check don't matched.
+
 #### Bugs encountered
 While making change to my `checkout Models` one migration got corrupted. I had a look and my mentor had a look, and the problem was with `Django`. My Mentor suggested to just create a new DB it would be quicker than keep looking for the bug. 
 
 When migrating files to `postgres` and error showed up.
 `django.db.utils.ProgrammingError: cannot cast type integer to date
 LINE 1: ...R COLUMN "release_date" TYPE date USING "release_date"::date`
-I first rename the field, migrate to `sqlite3`, and then migrate to `postgres` again, still an error. I checked with tutor support and the problems was with some of the existing migration, deleting them fixed the bug. And i was then able to deplopy to Heroku.
+I first rename the field, migrate to `sqlite3`, and then migrate to `postgres` again, still an error. I checked with tutor support and the problems was with some of the existing migration, deleting them fixed the bug. And i was then able to deploy to Heroku.
+
+On the shopping bag page, the plus and minus button to adjust the bag, sometimes appear over the NavBar when we scroll the page up, it is an intermittent problem, as sometimes the page function as expected, i look online, couldn't find anything helpful, the bug is esthetic, it doesn't affect the functionality of the page. I will look in into it when i have more time.
 ### Deployment
 The project is stored on Github and hosted on Heroku
 #### Local Deployment
@@ -179,14 +200,14 @@ web: gunicorn whisky_shop.wsgi:application
 
 | KEY                       | VALUE              
 |-----------------          | ------------------ 
-| AWS_ACCESS_KEY_ID         | your AWS accees key here      
+| AWS_ACCESS_KEY_ID         | your AWS access key here      
 | AWS_SECRET_ACCESS_KEY     | your AWS secret key here  
 | DATABASE_URL              | your Postgres DB url here
-| EMAIL_HOST_PASSWORD       | you email password(genereted by gmail)
+| EMAIL_HOST_PASSWORD       | you email password(generated by gmail)
 | EMAIL_HOST_USER           | your email address
 | SECRET_KEY                | your secret key
 | STRIPE_PUBLIC_KEY         | your stripe public key here
-| STRIPE_SECRET_KEY         | your stripe secretvkey here
+| STRIPE_SECRET_KEY         | your stripe secretkey here
 | STRIPE_WH_SECRET          | your stripe WH secret here
 | USE_AWS                   | True
 
@@ -197,7 +218,7 @@ DATABASES = {
         'default': dj_database_url.parse("<your Postrgres database URL here>")  
     }
 ```
-This is just a temporary set up that allows to make all the migrations required for our data in our DB to be transfer to Heroku **POstgres**. You shouln't commit and push at this stage for security reason.
+This is just a temporary set up that allows to make all the migrations required for our data in our DB to be transfer to Heroku **POstgres**. You shouldn't commit and push at this stage for security reason.
 
 7. Here you can now follow the exact steps, 4, 5 and 6 as explain in local deployment.
 
@@ -210,7 +231,7 @@ ALLOWED_HOSTS = ['your heroku app name here', 'localhost']
 10. You can now connect Heroku to Github to automatically deploy each time you push to Github.
 In Heroku **Dashboards** select 
 * Deploy -> Deployment method -> Github
-* link youn Github repo name to Heroku
+* link your Github repo name to Heroku
 * Click **Enable automatic Deployment**
-* Now you you run `git push` in the terminalit will push to Github and Heroku.
+* Now you you run `git push` in the terminal, it will push to Github and Heroku.
 11. After your app has been successfully deployed you can view you project by clicking on **open app**
