@@ -106,11 +106,9 @@ All drawing for the website can be found  here
 | Test        |  action    |  Result                  |   Test Result
 |  --------   |  --------  | --------------------     |  ------------
 | My account  |  click     | open dropdown menu       | passed
-| ---------   | --------   | --------------------     | -----------
 | Basket icon | click      | if empty Nothing happened       | passed
-| ----------- | ---------  | -----------------------  | ----------------
 | basket icon | click      | if something in, take you to shopping bag | passed
-| ----------- | ---------  | -------------------------------------     | ------  
+  
 
 
 ### Code Validation
