@@ -39,6 +39,9 @@ class Order(models.Model):
         max_length=254, null=False,
         blank=False, default='')
 
+    class Meta:
+        ordering = ['-date']
+
     def _generate_order_number(self):
         """
         Generate unique order number
