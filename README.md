@@ -102,16 +102,17 @@ All drawing for the website can be found  here
 * While i was developing the project i was manually testing as i go and checking on Google Chrome Developer Tools after each changes.
 * I tested the app on Chrome and Firefox on Laptop and 32inch HD Tv Screen, on the large screen we need to reduce the view to 75%.
 * I tested the app on Galaxy S9, S8, A40.On Ipad 6 in all cases the app was responsive and display content as expected.
+### Testing functionality
+| Test        |  action    |  Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+| My account  |  click     | open dropdown menu       | passed
+| ---------   | --------   | --------------------     | -----------
+| Basket icon | click      | if empty Nothing happened       | passed
+| ----------- | ---------  | -----------------------  | ----------------
+| basket icon | click      | if something in, take you to shopping bag | passed
+| ----------- | ---------  | -------------------------------------     | ------  
 
-| Test         |  action  |   Result            |  Test Result
-|   -------    |  -----   |  ---------          |   ---------                 
-| click on     | click    | Take to you the all | passed
-|  cellar      |          |      Whisky page    |     
-| -----------  |--------- |-------------------- |------------
-| click on     |  click   |  open dropdown menu | passed
-| my account   |          |  link to Register   |
-|              |          |  log in             |
-| ---------    | ------   | ----------------    | ----------
+
 ### Code Validation
 * All HTML passed the validation using W3C Markup Validation
 * All CSS files passed the validation using W3C CSS validation service. Jigsaw
