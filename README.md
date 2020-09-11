@@ -47,9 +47,11 @@ All drawing for the website can be found  here
 #### All pages
 * NavBar-mobile: The Navbar is  fixed at the top at all time, On mobile the link to the home page is located in the hamburger menu with the links to **all whiskies**, **regions** and **something specials**. Search bar, link to account and link to bag/checkout and a link to the Pre-release offers.
 * NavBar-desktop: The desktop has the same features with the logo on top left to allow user to return to the home page. **all whiskies**, **regions** and **something specials** are dropdown menu. 
+#### Footer
+* The footer is not present on all whisky's page. The reason behind this is that the page would, in normal shop, be very long, so there no need to have a footer a the bottom. On other pages that don't have as much content the users can see the footer without scrolling endlessly.
 #### Home page
 * Enter our cellar button.
-* Footer with logo return to home page on the left and social media links on the right.
+* Footer with logo return to home page(or reload) on the left and social media links on the right.
 #### All Whiskies
 * A sort bar is located on the right to allow users to search by **price**, **age**, **rating** or **name**. On mobile it located in the center.
 * The whiskies are displayed in random order, by clicking on an image we are taking to the product detail page, where we can increase or decrease the quantity, add to our bag or go back to the cellar. 
@@ -103,12 +105,57 @@ All drawing for the website can be found  here
 * I tested the app on Chrome and Firefox on Laptop and 32inch HD Tv Screen, on the large screen we need to reduce the view to 75%.
 * I tested the app on Galaxy S9, S8, A40.On Ipad 6 in all cases the app was responsive and display content as expected.
 ### Testing functionality
-| Test        |  action    |  Result                  |   Test Result
+#### NavBar and Footer
+| Test        |  action    |  Expected Result                  |   Test Result
 |  --------   |  --------  | --------------------     |  ------------
+| Logo  | click | on homepage reload, on other pages link you back to home page | passed 
 | My account  |  click     | open dropdown menu       | passed
-| Basket icon | click      | if empty Nothing happened       | passed
-| basket icon | click      | if something in, take you to shopping bag | passed
-  
+| Basket icon | click      | if empty reload the page       | passed
+| basket icon | click      | if there is something in your bag, redirect you to shopping bag page | passed 
+| Navbar      | click  |  all three links open dropdown menu and redirect to right page | passed
+| promo-banner | click and hover | take you to all whisky available in pre-release | passed
+| logo in footer | click and hover | on homepage reload, on other pages link you back to home page | passed
+| social link | click and hover | take you to their pages in a new tab | passed
+#### Homepage
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+| Enter our cellar | click | Take you to the page with all the whiskies | passed
+#### All Whiskies
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+| sorting bar  | click  |  open a dropdown menu to sort search by various categories in ascending or descending order | passed
+| Image   | click | take you to the product details page | passed
+| Edit/ Delete | click | If you are a registered user only. Take you to the edit page where you can edit all fields. Delete will delete the product | passed
+| back to top arrow | click | take you to the top of the page | passed
+#### Product details page
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+| image  | click | open then image in a new tab | passed
+| quantity-form | click/text | select by using the plus and minus button or by typing in the amount of whisky you want. You can't enter less than ! or more than 99 | passed
+| Edit/ Delete | click | If you are a registered user only. Take you to the edit page where you can edit all fields. Delete will delete the product | passed
+| back to the cellar | click | take you back to the all whisky page | passed 
+| add to bag | click | open a window with a secure checkout link | passed 
+| secure checkout link | click | take you to then shopping bag page | passed
+#### Shopping Bag
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+|quantity-forms | click/text | to adjust the quantity or removed all products from the bag | passed
+| back to the cellar | click | take you back to the all whisky page | passed
+| secure checkout | click | take you to the checkout form page | passed
+#### Checkout Form
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+| form fields | text | The fields will be populated if you are a returning users. Except the card fields | passed
+| save profile | checkbox | save all details to the profile for first time  users | passed
+| adjust bag | click | take you the shopping bag page for one last chance to change your bag content | passed
+| card field |text |  Enter the test card number 4242 4242 4242 4242 and any future expiring data, and any CSV. An error message wil; be trigger if you enter the wrong card details | passed
+| complete order | click | take you the checkout success page, it trigger a loading gif, and an email being send to both the user and then shop owner | passed
+#### Checkout success
+| Test        |  action    |  Expected Result                  |   Test Result
+|  --------   |  --------  | --------------------     |  ------------
+|check specials | click | take you to page that display all whiskies from the ** something specials ** link | passed
+
+
 
 
 ### Code Validation
@@ -126,7 +173,7 @@ When migrating files to `postgres` and error showed up.
 LINE 1: ...R COLUMN "release_date" TYPE date USING "release_date"::date`
 I first rename the field, migrate to `sqlite3`, and then migrate to `postgres` again, still an error. I checked with tutor support and the problems was with some of the existing migration, deleting them fixed the bug. And i was then able to deploy to Heroku.
 
-On the shopping bag page, the plus and minus button to adjust the bag, sometimes appear over the NavBar when we scroll the page up, it is an intermittent problem, as sometimes the page function as expected, i look online, couldn't find anything helpful, the bug is esthetic, it doesn't affect the functionality of the page. I will look in into it when i have more time.
+On the shopping bag page, the plus and minus button to adjust the bag, sometimes appear over the NavBar when we scroll the page up, it is an intermittent problem, as sometimes the page function as expected, i looked online, couldn't find anything helpful, the bug is esthetic, it doesn't affect the functionality of the page. I will look in into it when i have more time.
 ### Deployment
 The project is stored on Github and hosted on Heroku
 #### Local Deployment
