@@ -27,26 +27,5 @@
 {% endblock %}
 
 {% block page_footer %}
-     <footer class="page-footer fixed-bottom mt-auto py-3">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-6 mt-2">
-					<a class="logo-main-link logo-footer text-decoration-none" 
-                    href="{% url 'home' %}"><span>Uisge Beatha</span></a>
-				</div>
-				<div class="col-6 mt-2">
-					<ul class="list-inline social-link">
-						<li class="list-inline-item">
-							<a href="https://www.facebook.com" aria-label="Facebook"
-								target="_blank"><i class="fab fa-facebook" rel="noopener"></i></a>
-							<a href="https://www.instagram.com" aria-label="Instagram"
-								target="_blank"><i class="fab fa-instagram" rel="noopener"></i></a>
-							<a href="https://www.twitter.com" aria-label="Twitter"
-								target="_blank"><i class="fab fa-twitter" rel="noopener"></i></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
+     {% include 'includes/footer.html' %}
  {% endblock %}
