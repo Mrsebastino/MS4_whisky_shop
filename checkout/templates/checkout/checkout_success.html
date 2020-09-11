@@ -31,8 +31,8 @@
        </div>
      </div>
 
-     <div class="row">
-        <div class="col-12 col-lg-7">
+     <div class="row mb-5">
+        <div class="col-12 col-lg-7 mb-5">
           <div class="order-confirmation-wrapper p-2 border-black">
            <div class="row">
              <div class="col">
@@ -183,24 +183,27 @@
         </div>
      </div>
      <div class="row mb-5">
-        <div class="col-12 col-lg-7 text-right mb-5">
+        <div class="col-sm-6 col-12 text-right mb-5">
         {% if from_profile %}
-           <a href="{% url 'profile' %}" class="btn btn-outline-black rounded-0 my-2">
+           <a href="{% url 'profile' %}" class="btn btn-outline-black rounded-0 my-0">
             <span class="icon mr-2">
               <i class="fas fa-hand-point-left"></i>"
             </span>
              <span class="text-uppercase">Back to Profile</span>
           </a>
         {% else %}
-          <a href="{% url 'products' %}?special=clearance,pre_release,is_exclusive" class="btn btn-outline-black rounded-0 my-2">
+          <a href="{% url 'products' %}?special=clearance,pre_release,is_exclusive" class="btn btn-outline-black rounded-0 mb-5">
             <span class="icon mr-2">
-              <i class="fas fa-glass-whiskey"></i>"
+              <i class="fas fa-glass-whiskey"></i>
             </span>
              <span class="text-uppercase">Check those specials Whiskies!</span>
-          </a>
+          </a> 
           {% endif %}
         </div>
      </div>
   </div>
-
 {% endblock %}
+
+{% block page_footer %}
+     {% include 'includes/footer.html' %}
+ {% endblock %}
