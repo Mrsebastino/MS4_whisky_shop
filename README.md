@@ -310,4 +310,4 @@ In Heroku **Dashboards** select
 * Then logo name **Uisge Beatha** is Gaelic for Whisky which translate as **Water of life**
 ### Acknowledgements
 * My mentor Brian Macharia for his help.
-* The whole team at student support, Tim, Micheal, Miklos, Stephen, Haley, Cormac, Kevin.
+* The team at student support, Tim, Micheal, Miklos, Stephen, Haley, Cormac, Kevin.
