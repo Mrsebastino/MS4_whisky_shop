@@ -300,7 +300,7 @@ In Heroku **Dashboards** select
 ### Credits
 
 #### Contents
-* For this project i have used the Boutique ado tutorial as a reference throughout the development of the project, part of it have been modified to fit this project purpose, some part have been left untouched. (stripe and webhook, AWS, original setting up of the project, forms, bag and checkout)
+* For this project i have used the Boutique ado tutorial as a reference throughout the development of the project, part of it have been modified to fit this project purpose, some part have been left untouched. (stripe and webhook, AWS, forms, bag and checkout)
 * The 3D effect on the logo is inspired from **Coding Master** on Telegram 
 * I have used Stack Overflow, Slack and the tutor during the development of the project.
 * I also used [Django](https://docs.djangoproject.com/en/3.1/) documentation throughout the project.
