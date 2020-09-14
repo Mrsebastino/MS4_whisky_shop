@@ -53,9 +53,9 @@ All drawing for the website can be found  here
 * My profile take you to a page where you can view your order history and edit your details
 * sign out take you to a page where you are asked to sign out
 * If you are not signed in you will be offered to log in or register.
-* If you are sign in and you are a register user, will view the ** Product Management ** link, this will take you to a page where you can add a new product to the shop.
+* If you are sign in and you are a register user, will view the **Product Management** link, this will take you to a page where you can add a new product to the shop.
 #### Footer
-* The footer is not present on all whisky's page. The reason behind this is that the page would, in normal shop, be very long, so there no need to have a footer a the bottom. On other pages that don't have as much content the users can see the footer without scrolling endlessly.
+* The footer is not present on all whisky's page. The reason behind this is that the products page would, in normal shop, be very long, so i didn't saw the need to have a footer a the bottom. On other pages that don't have as much content the users can see the footer without scrolling endlessly.
 #### Home page
 * Enter our cellar button.
 * Footer with logo return to home page(or reload) on the left and social media links on the right.
@@ -68,14 +68,14 @@ All drawing for the website can be found  here
 #### Shopping Bag
 * The shopping bag page give the users a last chance to edit their bag.
 * It offers the choice to increase or completely remove a product fromm the bag.
-* It offers the chance to bo back to the cellar or to proceeded to the checkout.
+* It offers the chance to bo back to the cellar or to proceed to the checkout.
 #### Checkout 
 * The checkout page ask the users to add theirs personal details, delivery details and card details.
 * On the right the users can view the content of their bag and the total, this is the last chance they have to go back and adjust their bag, a link is provided just beside **complete order** button.
-* clicking **complete order** will trigger a success message in top right corner with the order number, and will trigger an email confirmation being send to the user. The full details of the order is displayed on the left.
+* clicking **complete order** will trigger a success message in top right corner with the order number, and will trigger an email confirmation being send to the user and the shop owner. The full details of the order is displayed on the left.
 * A link is offer to go back and view specials whiskies.
 ### Future Features
-* Add the functionality of login with social media app.
+* Add the functionality of login with social media link.
 * Add the locations of distillery on interactive map.
 * Being a student projects all the legals, refunds, cookie and delivery policy need to be research and implemented if this is going to be use as a real business.
 ### Technologies Used
@@ -112,13 +112,14 @@ All drawing for the website can be found  here
 * I tested the app on Chrome and Firefox on Laptop and 32inch HD Tv Screen, on the large screen we need to reduce the view to 75%.
 * I tested the app on Galaxy S9, S8, A40 and Ipad 6 in all cases the app was responsive and display content as expected.
 * The app was built with mobile first approach.
+* I used testing provided from Django, i tested forms, views and models. I did not intent to achieve 100% testing in **coverage**.
 ### Testing functionality
 #### NavBar and Footer
 | Test        |  action    |  Expected Result                  |   Test Result
 |  --------   |  --------  | --------------------     |  ------------
 | Logo  | click | on homepage reload, on other pages link you back to home page | passed 
 | My account  |  click     | open dropdown menu, with link to login or register      | passed
-| My Profile | click | take you a a page where you can view your order history and your persoanl and deleivery details | passed
+| My Profile | click | take you a a page where you can view your order history and your personal and delivery details | passed
 | logout | click | take you to the sign out page, and ask for confirmation | passed
 | login | click | take you a form where you enter username and password | passed
 | register | click | take you a register form where you are asked to enter your details | passed
@@ -144,7 +145,7 @@ All drawing for the website can be found  here
 | Test        |  action    |  Expected Result                  |   Test Result
 |  --------   |  --------  | --------------------     |  ------------
 | image  | click | open then image in a new tab | passed
-| quantity-form | click/text | select by using the plus and minus button or by typing in the amount of whisky you want. You can't enter less than ! or more than 99 | passed
+| quantity-form | click/text | select by using the plus and minus button or by typing in the amount of whisky you want. You can't enter less than 1 or more than 99 | passed
 | Edit/ Delete | click | If you are a registered user only. Take you to the edit page where you can edit all fields. Delete will delete the product | passed
 | back to the cellar | click | take you back to the all whisky page | passed 
 | add to bag | click | open a window with a secure checkout link | passed 
@@ -152,7 +153,7 @@ All drawing for the website can be found  here
 #### Shopping Bag
 | Test        |  action    |  Expected Result                  |   Test Result
 |  --------   |  --------  | --------------------     |  ------------
-|quantity-forms | click/text | to adjust the quantity or removed all products from the bag | passed
+| quantity-forms | click/text | to adjust the quantity or removed all products from the bag | passed
 | back to the cellar | click | take you back to the all whisky page | passed
 | secure checkout | click | take you to the checkout form page | passed
 #### Checkout Form
@@ -188,9 +189,9 @@ I first rename the field, migrate to `sqlite3`, and then migrate to `postgres` a
 
 * On the shopping bag page, the plus and minus button to adjust the bag, sometimes appear over the NavBar when we scroll the page up, it is an intermittent problem, as sometimes the page function as expected, i looked online, couldn't find anything helpful, the bug is esthetic, it doesn't affect the functionality of the page. I will look in into it when i have more time.
 
-* I have encountered a problem with **AWS** my project, made a lot more `Pull request` and `Get request` than expected, i checked with the tutor but since it's a third party they coudln't give that much advice. I was adviced to get a new **AWS**  `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` which i did, but that didn't fixed the issue. I contacted **AWS**, and made a request to be allowed more  `Pull and Get request` , but was only allowed a very small amount. I have made cost calculation, since i will have to cover the cost and it doesn't look to be expensive. 
+* I have encountered a problem with **AWS** when deploying to **Heroku**, my project, made a lot more `Pull request` and `Get request` than expected, i checked with the tutor but since it's a third party they couldn't give that much advice. I was advice to get a new **AWS**  `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` which i did, but that didn't fixed the issue. I contacted **AWS**, and made a request to be allowed more  `Pull and Get request` , but was only allowed a very small amount. I have made cost calculation, since i will have to cover the cost and it doesn't look to be expensive. I have done  some research and it's seems to be a divided area. Some peoples think it is cause by the static files being in the `S3 Bucket`, but other disagree, one thing i am sure of, is i didn't leak my secret key in my repository. I have ask clarification to **AWS**, i am waiting for an answer.
 ### Deployment
-The project is stored on Github and hosted on Heroku
+The project is stored on **Github** and hosted on **Heroku**
 #### Local Deployment
  To run this project, the following tools have to be installed:
 * An IDE of your choice (I used [Gitpod](https://www.gitpod.io/) for creating this project)
@@ -299,13 +300,14 @@ In Heroku **Dashboards** select
 ### Credits
 
 #### Contents
-* For this project i have used the Boutique ado tutorial as a reference throughout the development of the project, part of it have been modified to fit this project purpose, some part have been left untouch. (stripe and webhook, AWS, original setting up of the project, forms)
+* For this project i have used the Boutique ado tutorial as a reference throughout the development of the project, part of it have been modified to fit this project purpose, some part have been left untouched. (stripe and webhook, AWS, original setting up of the project, forms, bag and checkout)
+* The 3D effect on the logo is inspired from **Coding Master** on Telegram 
 * I have used Stack Overflow, Slack and the tutor during the development of the project.
 * I also used [Django](https://docs.djangoproject.com/en/3.1/) documentation throughout the project.
 #### Media 
 * All Photos were taken from Google.
 * The description of the Whiskys was taken from [kaggle](https://www.kaggle.com/koki25ando/22000-scotch-whisky-reviews) whisky reviews.
-* Then logo name **Uisge Beathe** is Gaelic for Whisky which translate as **Water of life**
+* Then logo name **Uisge Beatha** is Gaelic for Whisky which translate as **Water of life**
 ### Acknowledgements
 * My mentor Brian Macharia for his help.
 * The whole team at student support, Tim, Micheal, Miklos, Stephen, Haley, Cormac, Kevin.
