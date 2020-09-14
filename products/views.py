@@ -8,7 +8,7 @@ from .forms import ProductForm
 
 
 def all_products(request):
-    """ View to return all products and sorting and search queries """
+    """ View to return all products + sorting and search queries """
     products = Product.objects.all()
     query = None
     categories = None

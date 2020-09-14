@@ -5,7 +5,10 @@ from products.models import Product
 
 
 def bag_contents(request):
-
+    """
+    calculate total for the bag and if free delivery is applicable.
+    Based on the project tutorial
+    """
     bag_items = []
     total = 0
     product_count = 0
