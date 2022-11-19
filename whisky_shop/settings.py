@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.herokuapp.com', 'localhost']
 
 # Add Render.com URL to allowed hosts
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -125,7 +125,7 @@ WSGI_APPLICATION = 'whisky_shop.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('RENDER_EXTERNAL_HOSTNAME'))
     }
 else:
     DATABASES = {
