@@ -28,9 +28,9 @@ class Special(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(
-        'category', null=True, blank=True, on_delete=models.SET_NULL
-    )
+    # category = models.ForeignKey(
+    #     'Category', null=True, blank=True, on_delete=models.SET_NULL
+    # )
     special = models.ForeignKey(
         'Special', null=True, blank=True, on_delete=models.SET_NULL
     )
