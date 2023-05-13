@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 #ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.herokuapp.com', 'localhost']
-#ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost']
 
 
 # Add Render.com URL to allowed hosts
