@@ -10,7 +10,7 @@ The web page goals is to:
 * To offer Whisky that are still ageing with a pre-release service
 
 The live website can be view here 
-[Uisge Beatha](https://whisky-shop-uisge-beatha.herokuapp.com/)
+[Uisge Beatha](https://whisky-shop-uisge-beatha.onrender.com/)
 
 ## UX
 ### All Users

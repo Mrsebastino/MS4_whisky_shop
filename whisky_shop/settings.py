@@ -28,7 +28,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 #ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost']
+#ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost']
+
+
+# Add Render.com URL to allowed hosts
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -67,6 +73,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'whisky_shop.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 TEMPLATES = [
     {
