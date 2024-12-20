@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 
 #ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['whisky-shop-uisge-beatha.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Add Render.com URL to allowed hosts
